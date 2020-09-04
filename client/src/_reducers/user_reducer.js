@@ -1,21 +1,11 @@
-// import React, {Component} from 'react'
+import {LOGIN_USER} from '../_actions/types';
 
-// export default class Hello extends Component {
-//     render(){
-//         return (
-//             <div>
-//                 hello world
-//             </div>
-//         )
-//     }
-// }
-
-import React from 'react'
-
-export default function Hello(){
-    return (
-        <div>
-//                 hello world
-//             </div>
-    )
+export default function (state = {}, action) {
+    switch(action.type){
+        case 'LOGIN_USER':
+            return {...state, loginSuccess: action.payload}
+            break;
+        default:
+            return state;
+    }
 }
